@@ -18,7 +18,7 @@
     <div class="todo_table">
         <ul>
             {% for todo in todo_list %}
-            <li>{{ todo.id }} | {{ todo.task }} | {% if todo.complete == True %}Completed{% else %}Not Completed{% endif %}</li>
+            <li>{{ todo.id }} | {{ todo.task }} | {% if todo.complete == True %}Completed{% else %}Not Completed{% endif %} <a href="/update/{{ todo.id }}">Update</a><a href="/delete/{{ todo.id }}">Delete</a></li>
             {% endfor %}
         </ul>
 
