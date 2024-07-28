@@ -18,12 +18,21 @@
     <div class="todo_table">
         <ul>
             {% for todo in todo_list %}
-            <li>{{ todo.id }} | {{ todo.title }} | {% if todo.complete == True %}Completed{% else %}Not Completed{% endif %}</li>
+            <li>{{ todo.id }} | {{ todo.task }} | {% if todo.complete == True %}Completed{% else %}Not Completed{% endif %}</li>
             {% endfor %}
         </ul>
 
-
     </div>
+        
+    <div class="form">
+        <form action="/add" method="post">     <!-- form data will be sent to the /add route name="title" gives the input field a name attribute, which will be used to access the input's value in your Flask route. -->
+                <input type="text" name="task" placeholder="Enter Task...">
+                <button type="submit">Add</button>
+
+            </form>
+    </div>
+
+    
 
 
 
