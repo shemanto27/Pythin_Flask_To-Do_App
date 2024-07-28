@@ -13,7 +13,7 @@ db = SQLAlchemy(app)                                              #Initializing 
 # Making the table
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    task = db.Column(db.String(100))
+    title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
 
 
@@ -26,8 +26,8 @@ def home():
 
 @app.route('/add', methods=["POST"])
 def add():
-    task = request.form.get("task")
-    new_todo = Todo(task=task, complete= False) #A new Todo object is created
+    title = request.form.get("title")
+    new_todo = Todo(title=title, complete= False) #A new Todo object is created
     db.session.add(new_todo) #adds the new to-do item to the current database session
     db.session.commit() #saving the new to-do item to the database
     return redirect(url_for("home"))
