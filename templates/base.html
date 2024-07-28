@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <title>To Do App</title>
+</head>
+
+<body>
+    <div class="headings">
+        <h1>To Do App</h1>
+        <h3>Makes Your Life Easy😉</h3>
+
+    </div>
+    
+    <div class="todo_table">
+        <ul>
+            {% for todo in todo_list %}
+            <li>{{ todo.id }} | {{ todo.title }} | {% if todo.complete == True %}Completed{% else %}Not Completed{% endif %}</li>
+            {% endfor %}
+        </ul>
+
+
+    </div>
+
+
+
+
+</body>
+</html>
